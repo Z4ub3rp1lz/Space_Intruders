@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>afe52354-4330-4ba4-9a6d-f043863e774b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Space_Intruders.py</StartupFile>
+    <StartupFile>Space_Intruders_frame.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Space_Intruders.py" />
+    <Compile Include="Space_Intruders_frame.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
