@@ -106,22 +106,7 @@ def shotEnemy():
         if temp_shot_state == 1:
             continue
         if temp_shot_time > clock_s: 
-            temp_shot[3] = 1
-            temp_shot_x = 140 + circle_nr
-            temp_shot_y = 43 + circle_row
-            temp_spot_x = heroTank.winfo_rootx() - temp_shot_x
-            temp_spot_y = 600 - temp_shot_y
-            temp_shot_ang = math.degrees(math.tan((temp_spot_y/temp_spot_x)))
-            temp_shot[0].place(x=temp_shot_x,y=temp_shot_y)
-            temp_pic = Image.open("SI_Alienshot_1.png")
-            temp_ang_pic = temp_pic.rotate(temp_shot_ang)
-            temp_shot_pic = ImageTk.PhotoImage(temp_ang_pic)
-            temp_shot[1] = temp_shot_x
-            temp_shot[2] = temp_shot_y
-            temp_shot[5] = temp_shot_ang
-            temp_shot[6] = temp_shot_pic
-            enemy_shots[shot] = temp_shot
-            enemy_shots[shot][0].configure(image=enemy_shots[shot][6])
+
             print(temp_shot[4])
             
     if shift == 0:
@@ -286,26 +271,26 @@ class FrameMainmenu(Tk.Frame):
         lives = 3
         self.master.update()
         
-        
+def main():        
 #HsMenu = Tk.Toplevel(root=root).pack(side="top", fill="both", expand=True)
 ## def GameWindow and hide it may be lock timers !!!
-root = Tk.Tk()
-root.title("Space Intruders")
-root.geometry("800x640+50+50")
-root.configure(bg="black")
-root.resizable=(0,0)
-alienhouse_dmg_1 = Tk.PhotoImage(file="SI_Alienhouse_dmg_1.png")
-alienhouse_dmg_2 = Tk.PhotoImage(file="SI_Alienhouse_dmg_2.png")
-alienhouse_full = Tk.PhotoImage(file="SI_Alienhouse_full.png")
-alienshot_1 = Tk.PhotoImage(file="SI_Alienshot_1.png")
-alienshot_2 = Tk.PhotoImage(file="SI_Alienshot_2.png")
-cannon_1 = Tk.PhotoImage(file="SI_Cannon_1.png")
-cannon_2 = Tk.PhotoImage(file="SI_Cannon_2.png")
-cannon_1_hit = Tk.PhotoImage(file="SI_Cannon_1_hit.png")
-cannon_2_hit = Tk.PhotoImage(file="SI_Cannon_2_hit.png")
-humanhouse_dmg_1 = Tk.PhotoImage(file="SI_Humanhouse_dmg_1.png")
-humanhouse_dmg_2 = Tk.PhotoImage(file="SI_Humanhouse_dmg_2.png")
-humanhouse_dmg_3 = Tk.PhotoImage(file="SI_Humanhouse_dmg_3.png")
+    root = Tk.Tk()
+    root.title("Space Intruders")
+    root.geometry("800x640+50+50")
+    root.configure(bg="black")
+    root.resizable=(0,0)
+    alienhouse_dmg_1 = Tk.PhotoImage(file="SI_Alienhouse_dmg_1.png")
+    alienhouse_dmg_2 = Tk.PhotoImage(file="SI_Alienhouse_dmg_2.png")
+    alienhouse_full = Tk.PhotoImage(file="SI_Alienhouse_full.png")
+    alienshot_1 = Tk.PhotoImage(file="SI_Alienshot_1.png")
+    alienshot_2 = Tk.PhotoImage(file="SI_Alienshot_2.png")
+    cannon_1 = Tk.PhotoImage(file="SI_Cannon_1.png")
+    cannon_2 = Tk.PhotoImage(file="SI_Cannon_2.png")
+    cannon_1_hit = Tk.PhotoImage(file="SI_Cannon_1_hit.png")
+    cannon_2_hit = Tk.PhotoImage(file="SI_Cannon_2_hit.png")
+    humanhouse_dmg_1 = Tk.PhotoImage(file="SI_Humanhouse_dmg_1.png")
+    humanhouse_dmg_2 = Tk.PhotoImage(file="SI_Humanhouse_dmg_2.png")
+    humanhouse_dmg_3 = Tk.PhotoImage(file="SI_Humanhouse_dmg_3.png")
 humanhouse_full = Tk.PhotoImage(file="SI_Humanhouse_full.png")
 humanshot = Tk.PhotoImage(file="SI_Humanshot.png")
 humanspaceship_1 = Tk.PhotoImage(file="SI_Humanspaceship_1.png")
@@ -391,3 +376,6 @@ shotEnemy()
 UpdateLabels()
 ##MainMenu = Tk.Toplevel(root=root).pack(height=480,width=600,side="top", fill="both", expand=True)
 root.mainloop()
+
+if __name__ == 'main':
+    main()
